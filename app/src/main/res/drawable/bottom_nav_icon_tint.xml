@@ -1,0 +1,11 @@
+<!-- bottom_nav_icon_selector.xml -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Inactive state -->
+    <item android:state_checked="false">
+        <color android:color="@color/separator_color" /> <!-- Set the inactive icon color -->
+    </item>
+    <!-- Active state -->
+    <item android:state_checked="true">
+        <color android:color="@color/colorPrimary" /> <!-- Set the active icon color -->
+    </item>
+</selector>

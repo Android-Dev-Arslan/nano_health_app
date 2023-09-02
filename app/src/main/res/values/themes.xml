@@ -1,0 +1,18 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.NanoHealthSuiteApp" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.NanoHealthSuiteApp" parent="Base.Theme.NanoHealthSuiteApp" />
+
+    <style name="product_image_corner_style">
+        <item name="cornerSize">10%</item>
+    </style>
+
+    <style name="customRatingbar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/rating_star_res</item>
+    </style>
+
+</resources>

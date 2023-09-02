@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimaryDark">#188095</color>
+    <color name="colorPrimary">#2AB3C6</color>
+    <color name="colorAccent">#08293B</color>
+
+    <color name="black">#FF000000</color>
+    <color name="black_transparent">#60000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="separator_color">#3C3C435C</color>
+    <color name="product_desc_color">#838396</color>
+    <color name="rating_box_bg_color">#F1F1F1</color>
+</resources>
