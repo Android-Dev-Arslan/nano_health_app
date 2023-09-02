@@ -26,6 +26,7 @@ import com.example.nanohealthsuiteapp.data.remote.dto.product.ProductDetail
 import com.example.nanohealthsuiteapp.utils.makeInvisible
 import com.example.nanohealthsuiteapp.utils.makeVisible
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.bottomsheet.BottomSheetBehavior.BottomSheetCallback
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -45,6 +46,7 @@ class ProductDetailFragment : Fragment() {
     private var tvRating: TextView? = null
     private var ratingBar: RatingBar? = null
     private var productDetailProgress: LinearLayout? = null
+    private var ivToggleBottomSheet: ImageView? = null
 
     private lateinit var behavior: BottomSheetBehavior<View>
 
@@ -81,6 +83,7 @@ class ProductDetailFragment : Fragment() {
         ratingBar = requireView().findViewById(R.id.rb_product_rating)
         productDetailBottomSheet = requireView().findViewById(R.id.bottom_sheet)
         productDetailProgress = requireView().findViewById(R.id.product_detail_progress)
+        ivToggleBottomSheet = requireView().findViewById(R.id.iv_toggle_bottom_sheet)
 
 
         arguments?.getString(PRODUCT_ID)?.let {
@@ -152,5 +155,19 @@ class ProductDetailFragment : Fragment() {
         val twentyPercentHeight = (screenHeight * 0.20).toInt()
         behavior = BottomSheetBehavior.from(productDetailBottomSheet!!)
         behavior.peekHeight = twentyPercentHeight
+
+        behavior.addBottomSheetCallback(object : BottomSheetCallback() {
+            override fun onStateChanged(bottomSheet: View, newState: Int) {
+                if (newState == BottomSheetBehavior.STATE_EXPANDED) {
+                    ivToggleBottomSheet?.rotation = 180f
+                } else {
+                    ivToggleBottomSheet?.rotation = 0f
+                }
+            }
+
+            override fun onSlide(bottomSheet: View, slideOffset: Float) {
+
+            }
+        })
     }
 }
